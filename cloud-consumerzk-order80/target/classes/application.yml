@@ -1,0 +1,10 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: cloud-consumer-order80
+  cloud:
+    zookeeper:
+      #集群环境可以用逗号分隔不同的服务器
+      connect-string: 106.52.31.131:2181,106.52.31.131:2182,106.52.31.131:2183
