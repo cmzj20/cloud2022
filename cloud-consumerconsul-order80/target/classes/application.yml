@@ -1,0 +1,15 @@
+server:
+  port: 80
+spring:
+  application:
+    name: cloud-consumer-order80
+  cloud:
+    consul:
+      host: 106.52.31.131
+      port: 8500
+      discovery:
+        #hostname: 127.0.0.1
+        service-name: ${spring.application.name}
+        #开启心跳机制
+        heartbeat:
+          enabled: true
