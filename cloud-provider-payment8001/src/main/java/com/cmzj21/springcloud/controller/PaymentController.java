@@ -89,4 +89,13 @@ public class PaymentController {
         return this.discoveryClient;
     }
 
+    /**
+     *
+     * @return 执行的结果
+     */
+    @GetMapping("/payment/port")
+    public String  port() {
+        return serverPort;
+    }
+
 }

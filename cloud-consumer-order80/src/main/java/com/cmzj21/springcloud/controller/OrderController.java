@@ -6,7 +6,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
@@ -26,6 +25,15 @@ public class OrderController {
     @GetMapping("/consumer/payment/get/{id}")
     public CommonResult get(@PathVariable("id") Long id){
         return restTemplate.getForObject(urlPath+"payment/get/"+id,CommonResult.class);
+    }
+
+    /**
+     *
+     * @return 执行的结果
+     */
+    @GetMapping("/consumer/payment/port")
+    public String  port() {
+        return restTemplate.getForObject(urlPath + "payment/port", String.class);
     }
 
 
