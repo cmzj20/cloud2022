@@ -4,6 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * 统一的返回格式
+ * @author cmzj21
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

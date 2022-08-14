@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * @author cmzj21
+ */
 @RestController
 @Slf4j
 public class PaymentController {
@@ -25,13 +28,13 @@ public class PaymentController {
     private DiscoveryClient discoveryClient;
 
     @PostMapping("/payment/create")
-    public CommonResult<Integer> create(@RequestBody Payment payment){
+    public CommonResult<Integer> create(@RequestBody Payment payment) {
         log.info(payment.toString());
         int i = paymentService.create(payment);
-        if(i>0){
-            return  new CommonResult<>(200,"插入成功port: "+serverPort,i);
-        }else{
-            return  new CommonResult<>(444,"插入失败port: "+serverPort,null);
+        if (i > 0) {
+            return new CommonResult<>(200, "插入成功port: " + serverPort, i);
+        } else {
+            return new CommonResult<>(444, "插入失败port: " + serverPort, null);
         }
     }
 
